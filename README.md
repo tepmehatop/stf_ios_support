@@ -66,3 +66,85 @@
 ### Debugging
 1. run `./view_log` to see list of things that log
 1. run `./view_log -proc [one from list]`
+
+
+### Sample config.json
+
+
+```
+{
+  "xcode_dev_team_id": "G34RY99M2F",
+  "stf": {
+    "ip": "192.168.1.56",
+    "hostname": "tepmehatop"
+  },
+  "video": {
+    "enabled": true,
+    "use_vnc": true,
+    "vnc_scale": 2,
+    "vnc_password": "",
+    "frame_rate": 10
+  },
+  "install": {
+    "root_path": "/Users/imac/Desktop/iosSTF/stf_ios_support-master",
+    "config_path": "/Users/imac/Desktop/iosSTF/stf_ios_support-master/config.json"
+  },
+  "vpn": {
+    "type": "openvpn",
+    "ovpn_config": "[path to your openvpn config file]"
+  }
+}
+
+
+{
+  "wda_folder": "./bin/wda",
+  "xcode_dev_team_id": "G34RY99M2F",
+  "network": {
+    "coordinator_port": 8027,
+    "video": "8000-8005",
+    "dev_ios": "9240-9250",
+    "vnc": "5901-5911",
+    "wda": "8100-8105",
+    "interface": "en0"
+  },
+  "stf": {
+    "ip": "",
+    "hostname": ""
+  },
+  "video": {
+    "enabled": true,
+    "use_vnc": false,
+    "vnc_scale": 2,
+    "vnc_password": "",
+    "frame_rate": 5
+  },
+  "install": {
+    "root_path": "",
+    "config_path": ""
+  },
+  "log": {
+    "main": "logs/coordinator",
+    "proc_lines": "logs/procs",
+    "wda_wrapper_stdout": "./logs/wda_wrapper_stdout",
+    "wda_wrapper_stderr": "./logs/wda_wrapper_stderr"
+  },
+  "vpn": {
+    "type": "openvpn",
+    "ovpn_working_dir": "/usr/local/etc/openvpn",
+    "tblick_name": ""
+  },
+  "bin_paths": {
+    "wdaproxy": "bin/wdaproxy",
+    "device_trigger": "bin/osx_ios_device_trigger",
+    "video_enabler": "bin/osx_ios_video_enabler",
+    "mirrorfeed": "bin/mirrorfeed",
+    "openvpn": "/usr/local/opt/openvpn/sbin/openvpn",
+    "iproxy": "/usr/local/bin/iproxy",
+    "wdawrapper": "bin/wda_wrapper",
+    "ffmpeg": "bin/ffmpeg"
+  },
+  "repos": {
+    "stf": "https://github.com/nanoscopic/stf-ios-provider.git"  
+  }
+}
+```
