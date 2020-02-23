@@ -148,3 +148,53 @@
   }
 }
 ```
+
+## STF IOS solving problems
+
+### Problem 1
+
+```
+iMac-IMac:stf_ios_support-master imac$ make
+parse error: Invalid numeric literal at line 1, column 3
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C coordinator
+go get
+go: downloading github.com/jviney/go-proc v0.2.0
+go: extracting github.com/jviney/go-proc v0.2.0
+go: downloading github.com/fsnotify/fsnotify v1.4.7
+go: extracting github.com/fsnotify/fsnotify v1.4.7
+go: finding github.com/fsnotify/fsnotify v1.4.7
+go: finding github.com/jviney/go-proc v0.2.0
+go get .
+go build  -o ../bin/coordinator .
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C video_enabler
+xcodebuild -scheme osx_ios_video_enabler TARGET_BUILD_DIR="../bin"
+Build settings from command line:
+    TARGET_BUILD_DIR = ../bin
+
+note: Using new build system
+note: Planning build
+note: Constructing build description
+error: No signing certificate "Mac Development" found: No "Mac Development" signing certificate matching team ID "Q3YB4NP58J" with a private key was found. (in target 'osx_ios_video_enabler' from project 'osx_ios_video_enabler')
+
+** BUILD FAILED **
+
+make[1]: *** [../bin/osx_ios_video_enabler] Error 65
+make: *** [bin/osx_ios_video_enabler] Error 2
+```
+
+### Solve problem 1 
+
+1. Add your developer Apple ID to XCode
+
+    1. XCode -> XCode menu -> Preferences -> Accounts Tab
+    1. `+` under `Apple IDs` list
+    1. Choose `Apple ID`
+    1. Login to your account so that dev certs can be downloaded
+    
+2. Open osx_ios_video_enabler.xcodeproj with xcode
+	
+   2. Build settings > Code Singing Iden... change to manual or personal
+   2. Rerun make
+   
+   
+   
